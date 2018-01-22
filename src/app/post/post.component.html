@@ -1,0 +1,28 @@
+<p>
+  post works!
+</p>
+<div *ngFor="let post of posts">
+  <ul>
+      <li  (click)="show(post)">{{post.title}}
+        <p [ngClass]="{'show' : post.showContent, 'content' : true }">{{post.content}}
+          <button (click)="editPost(post)" class="btn btn-primary">Edit!</button>
+          <button (click)="deletePost(post)" class="btn btn-secondary">DELETE!</button>
+        </p>
+        </li>
+
+  </ul>
+</div>
+<form *ngIf="hidden" class="mb-4">
+  <h2>Edit Post</h2>
+  <div class="form-group">
+    <label>Title: </label>
+    <input type="text" name="title" class="form-control" [(ngModel)]="selectedPost.title">
+  </div>
+  <div class="form-group">
+    <label>Title: </label>
+    <textarea type="text" name="content" class="form-control" [(ngModel)]="selectedPost.content"></textarea>
+  </div>
+  <button type="button" name="button" class="btn btn-success" (click)="hidden = false">Done Editing</button>
+</form>
+
+<app-add-post (childPosts)="addPost($event)"></app-add-post>

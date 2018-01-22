@@ -1,0 +1,9 @@
+p.content {
+  height: 0;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+p.show {
+  height: 10px;
+  opacity: 1;
+}

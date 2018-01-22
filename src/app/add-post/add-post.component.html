@@ -1,0 +1,21 @@
+<button type="button" class="btn btn-success" name="button" (click)="displayForm()">Add new post</button>
+
+<div class="add-post" *ngIf="show">
+  <h3>
+    Post Something New!
+  </h3>
+  <form>
+    <div class="form-group">
+      <label for="">Post Title:</label>
+      <input type="text" class="form-control" placeholder="TITLE" name="" #title>
+    </div>
+    <div class="form-group">
+      <textarea type="text" class="form-control" placeholder="CONTENT" name="" #content></textarea>
+    </div>
+    <button type="button" class="btn btn-dark" (click)="submitPost(content.value, title.value);
+    content.value = '';
+    title.value = '';">SUBMIT</button>
+  </form>
+
+
+</div>
